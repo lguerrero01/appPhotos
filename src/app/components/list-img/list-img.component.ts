@@ -8,14 +8,17 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./list-img.component.css'],
 })
 export class ListImgComponent implements OnInit, OnDestroy {
+  /////////////
+  // Atributes
+  ////////////
   public search: string = '';
   public suscription: Subscription;
   public loading: Boolean = false;
   public listImg: any[] = [];
-
   public perPage: number = 10;
   public currentPage = 1;
   public calcAllPage = 0;
+
   constructor(private imgService: ImagesService) {
     this.suscription = this.imgService.getSearch().subscribe((data) => {
       this.search = data;
