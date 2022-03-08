@@ -1,1 +1,7 @@
-<p>error works!</p>
+<div class="container ">
+  <div class="row justify-content-center m-2">
+    <div *ngIf="show" class="alert alert-dismissible alert-danger col-3 text-center">
+      <strong>{{ text | uppercase }}</strong>
+    </div>
+  </div>
+</div>
