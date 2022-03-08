@@ -28,7 +28,7 @@ export class ErrorComponent implements OnInit, OnDestroy {
     this.show = true;
     setTimeout(() => {
       this.show = false;
-    }, 2000);
+    }, 3000);
   }
   ngOnDestroy(): void {
     this.suscription.unsubscribe();

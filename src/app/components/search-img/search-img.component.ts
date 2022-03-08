@@ -8,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchImgComponent implements OnInit {
   public imgName: string = '';
-  constructor(private ImgService: ImagesService) {}
+  constructor(private imgService: ImagesService) {}
 
   ngOnInit(): void {}
+
   public searchImg() {
     if (this.imgName === '') {
-      this.ImgService.setError('Agrega un texto de busqueda');
+      this.imgService.setError('Agrega un texto de busqueda');
+      return;
     }
-    console.log(this.imgName);
+    this.imgService.sendSearch(this.imgName);
   }
 }
